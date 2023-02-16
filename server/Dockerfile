@@ -32,7 +32,7 @@ RUN apt-get install php$PHP_VERSION-xdebug
 # Config XDebug
 COPY .docker/config/20-xdebug.ini /etc/php/$PHP_VERSION/cli/conf.d/20-xdebug.ini
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --installdir=/usr/local/bin/ --filename=composer && export COMPOSER_MEMORY_LIMIT=-1 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer && export COMPOSER_MEMORY_LIMIT=-1 
 # Config Apache
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
