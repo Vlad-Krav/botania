@@ -1,0 +1,119 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="savePlant()"
+            [formGroup]="plantForm">
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="nombrePlantaId">Nombre Planta</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="nombrePlantaId"
+                   type="text"
+                   placeholder="Nombre (requerido)"
+                   formControlName="nombre"
+                   name="nombre" />
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="valoracionId">Valoracion (1-5)</label>
+
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="valoracionId"
+                   type="text"
+                   placeholder="Valoracion (1-5)"
+                   formControlName="valoracion"
+                   name="valoracion" />
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="descripcioncortaId">Descripción corta</label>
+
+          <div class="col-md-8">
+            <textarea class="form-control"
+                      id="descripcioncortaId"
+                      placeholder="Descripción Corta"
+                      rows=3
+                      formControlName="descripcionCorta"
+                      name="descripcionCorta"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="descripcionId">Descripción</label>
+
+          <div class="col-md-8">
+            <textarea class="form-control"
+                      id="descripcionId"
+                      placeholder="Descripcion"
+                      rows=3
+                      formControlName="descripcion"
+                      name="descripcion"></textarea>
+          </div>
+        </div>
+
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="tipoId">Tipo</label>
+
+          <div class="col-md-8">
+            <input class="form-control"
+                      id="tipoId"
+                      placeholder="Tipo"
+                      formControlName="tipo"
+                      name="tipo" />
+          </div>
+        </div>
+
+      <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="imagenId">Imagen</label>
+
+          <div class="col-md-8">
+            <input class="form-control"
+                      id="imagenId"
+                      placeholder="Imagen"
+                      formControlName="imagen"
+                      name="imagen" />
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"
+                    type="submit">
+              Guardar
+            </button>
+            <button class="btn btn-outline-secondary mr-3"
+                    type="button"
+                    title="Cancelar edición"
+                    [routerLink]="['']">
+              Cancelar
+            </button>
+            <button class="btn btn-outline-warning"
+                    type="button"
+                    title="Borrar esta planta"
+                    (click)="deletePlant()">
+              Borrar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

@@ -1,0 +1,24 @@
+<figure class="figure">
+  <img src="{{plant.imagen}}" class="figure-img img-fluid rounded">
+  <figcaption class="figure-caption">
+    <h4>Nombre: {{plant.nombre}}</h4>
+    <h5>Descripción: {{plant.descripcion}}</h5>
+    <h5>Valoración: {{plant.valoracion}}</h5>
+    <h5>Tipo: {{plant.tipo}}</h5>
+  </figcaption>
+</figure>
+
+<div class="row mt-4">
+  <div class="col-md-4">
+    <button class="btn btn-outline-secondary mr-3"
+            style="width:80px"
+            (click)="onBack()">
+      <i class="fa fa-chevron-left"></i> Atrás
+    </button>
+    <button class="btn btn-outline-primary"
+            style="width:80px"
+            (click)="goEdit()">
+      Editar
+    </button>
+  </div>
+</div>

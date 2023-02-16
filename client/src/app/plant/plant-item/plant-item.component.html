@@ -1,0 +1,8 @@
+<figure class="figure">
+    <img src="{{plant.imagen}}" class="figure-img img-fluid rounded">
+    <figcaption class="figure-caption">
+      <h5><a [routerLink]="['/plants', plant.id]">{{plant.nombre}}</a></h5>
+      <b>{{plant.tipo}}</b>
+      <p>{{plant.descripcionCorta}}</p>
+    </figcaption>
+</figure>
