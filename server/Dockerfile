@@ -43,7 +43,7 @@ COPY .docker/config/000-default.conf /etc/apache2/sites-available/000-default.co
 RUN a2enmod rewrite headers
 RUN service apache2 start
 COPY . /var/www/html/
-WORKDIR /var/www/html/public
+WORKDIR /var/www/html/
 EXPOSE 80
 EXPOSE 8000
 EXPOSE 443
